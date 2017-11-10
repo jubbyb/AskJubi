@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1061847877083",
+    "firebase_url": "https://askjubi.firebaseio.com",
+    "project_id": "askjubi",
+    "storage_bucket": "askjubi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061847877083:android:87e47f9a7d2cee3f",
+        "android_client_info": {
+          "package_name": "com.askjubi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1061847877083-bbdnf32e7it8qrt73od2rm4n6q65ej12.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvJEkkCm1Sbk5sfZjUJhUWAIssf5TwN6Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
