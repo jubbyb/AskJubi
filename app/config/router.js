@@ -6,6 +6,7 @@ import Feed from '../screens/Feed';
 import Me from '../screens/Me';
 import UserDetail from '../screens/UserDetail';
 import Settings from '../screens/Settings';
+import AddContact from '../screens/AddContact';
 
 
 export const FeedStack = StackNavigator({
@@ -65,6 +66,16 @@ export const Tabs = TabNavigator({
 
 });
 
+
+export const AddContactStack = StackNavigator({
+    AddContact: {
+        screen: AddContact,
+        navigationOptions: {
+            title: 'Add',
+        }
+    },
+});
+
 export const SettingsStack = StackNavigator({
     Settings: {
         screen: Settings,
@@ -80,6 +91,9 @@ export const Root = StackNavigator({
     },
     Settings:{
         screen : SettingsStack,
+    },
+    AddContact:{
+        screen : AddContactStack,
     },
 },    {
         mode:'modal',

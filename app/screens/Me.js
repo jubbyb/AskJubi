@@ -9,9 +9,7 @@ import  firebase from '../config/firebase';
 class Me extends Component {
   handleSettingsPress = () => {
     console.log('button pressed');
-     //  this.itemsRef =  firebase.database().ref('askjubi');
-   // this.itemsRef.push({description: 'descript'});
-    //this.props.navigation.navigate('Settings');
+     this.props.navigation.navigate('Settings');
   
   };
   count = 2;
