@@ -31,6 +31,9 @@ class Feed extends Component {
         
         profiles.push({
           name: child.val().name,
+          email: child.val().email,
+          phone: child.val().phone,
+          instagram: child.val().instagram,
           _key: child.key
         });
       });
@@ -51,8 +54,11 @@ class Feed extends Component {
     this.listenForProfiles(this.dataRef);
   }
     
+ // onLearnMore = (user) => {
+  //  this.props.navigation.navigate('UserDetail', user);
+ // };
   onLearnMore = (user) => {
-    this.props.navigation.navigate('UserDetail', user);
+    this.props.navigation.navigate('UserDetails', user);
   };
 
   handleAddContactPress = () => {
@@ -120,7 +126,8 @@ console.log('item' + name);
               key={item.name}
                 roundAvatar
                 title={`${item.name} ${item.name}`}
-                subtitle={item.name}
+                subtitle={item.email}
+                onPress={() => this.onLearnMore(item)}
                // avatar={{ uri: item.picture.thumbnail }}
               />
             ))}

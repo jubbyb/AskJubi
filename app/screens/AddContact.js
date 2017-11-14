@@ -10,17 +10,14 @@ class AddContact extends Component {
         super(props);
         this.state = { 
             name: '',
-            phone:''     };
+            phone:'' ,
+            email:'', 
+            instagram:''
+          //  login, 
+           // location
+           };
       }
-    setUserMobile = () => {
-        
-        console.log('button post');
-        this.itemsRef =  firebase.database().ref('contacts');
-        this.itemsRef.push({
-            name: `${this.name}`,
-            phone:`${this.phone}`});
-        //this.count = this.count +1;
-      };
+ 
 
       addNewContact = () =>  {
        console.log('add contact ');
@@ -28,7 +25,9 @@ class AddContact extends Component {
        this.itemsRef =  firebase.database().ref('contacts');
        this.itemsRef.push({
            name: this.state.name,
-           phone:this.state.phone});
+           phone:this.state.phone,
+           email:this.state.email,
+           instagram:this.state.instagram});
        
        //console.log(this.textInput);
        // this.textInput.clearText();
@@ -64,15 +63,25 @@ class AddContact extends Component {
    
         <FormLabel>Phone</FormLabel>
         <FormInput
-         ref={ref => this.textInput = ref} 
-         name="phone"
-         value={this.state.phone}
-         onChangeText={(phone) => this.setState({phone})}
+            ref={ref => this.textInput = ref} 
+            name="phone"
+            value={this.state.phone}
+            onChangeText={(phone) => this.setState({phone})}
         ></FormInput>
         <FormLabel>Email</FormLabel>
-        <FormInput></FormInput>
+        <FormInput
+            ref={ref => this.textInput = ref} 
+            name="email"
+            value={this.state.email}
+            onChangeText={(email) => this.setState({email})}
+        ></FormInput>
         <FormLabel>Instagram</FormLabel>
-        <FormInput></FormInput>
+        <FormInput
+             ref={ref => this.textInput = ref} 
+             name="instagram"
+             value={this.state.instagram}
+             onChangeText={(instagram) => this.setState({instagram})}
+            ></FormInput>
         <FormLabel>Twitter</FormLabel>
         <FormInput></FormInput>
         <FormLabel>Company</FormLabel>

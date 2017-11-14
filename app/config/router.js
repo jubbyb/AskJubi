@@ -5,6 +5,7 @@ import {Icon} from 'react-native-elements';
 import Feed from '../screens/Feed';
 import Me from '../screens/Me';
 import UserDetail from '../screens/UserDetail';
+import UserDetails from '../screens/UserDetails';
 import Settings from '../screens/Settings';
 import AddContact from '../screens/AddContact';
 
@@ -23,7 +24,12 @@ UserDetail:{
         title: `${navigation.state.params.name.first.toUpperCase()} ${navigation.state.params.name.last.toUpperCase()}`,
     } ), 
 },
-
+UserDetails:{
+    screen:UserDetails,
+    navigationOptions:({ navigation }) => ({
+        title: `${navigation.state.params.name.toUpperCase()} ${navigation.state.params.name.toUpperCase()}`,
+    } ), 
+},
 
 });
 
