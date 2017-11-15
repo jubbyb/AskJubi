@@ -2,7 +2,8 @@ import React from 'react';
 import {TabNavigator,StackNavigator} from 'react-navigation';
 import {Icon} from 'react-native-elements';
 
-import Feed from '../screens/Feed';
+
+import Contacts from '../screens/Contacts';
 import Me from '../screens/Me';
 import UserDetail from '../screens/UserDetail';
 import UserDetails from '../screens/UserDetails';
@@ -11,10 +12,10 @@ import AddContact from '../screens/AddContact';
 
 
 export const FeedStack = StackNavigator({
-Feed:{
-    screen: Feed,
+    Contacts:{
+    screen: Contacts,
     navigationOptions:{
-        title:'Feed',
+        title:'Contacts',
         
     }
 },
@@ -31,25 +32,35 @@ UserDetails:{
     } ), 
 },
 
+    AddContact: {
+        screen: AddContact,
+             navigationOptions:({ navigation }) => ({
+                title: 'Create Contact',
+               
+            } ),
+        
+    },
+
+
 });
 
 
 export const Tabs = TabNavigator({
-    Feed: {
+    Contacts: {
         screen: FeedStack,
        
         navigationOptions: {
-            tabBarLabel: 'Feed',
-            tabBarOptions: {
-                showIcon: true,
-                
-                },
+            tabBarLabel: 'Contacts',
+            
             tabBarIcon: ({tintColor}) => {
                 
-              <Icon name='list' />
+              return <Icon name='list' type='MaterialIcons' size={26} color={tintColor}/>
+              
             },
               
-        }  
+        } ,
+     
+         
     },
     Me:{
         screen: Me,
@@ -59,28 +70,32 @@ export const Tabs = TabNavigator({
                 showIcon: true,
                 
                 },
-            tabBarIcon: ({tintColor}) => {
                 
-              <Icon name='account-circle' />
+            tabBarIcon: ({tintColor}) => {
+               
+                
+                
+              return <Icon name='account-circle'  type='MaterialIcons' size={26} color={tintColor}/>
             },
               
         }
     },
+},
+{   
+    tabBarOptions: {
+        showIcon: true,
+        showLabel: false,
+        style: {
+            //backgroundColor: '#fff', // Makes Android tab bar white instead of standard blue
+           // height: 70 // I didn't use this in my app, so the numbers may be off. 
+          }
     
-
-    
-
-});
-
-
-export const AddContactStack = StackNavigator({
-    AddContact: {
-        screen: AddContact,
-        navigationOptions: {
-            title: 'Add',
-        }
     },
+   
 });
+
+
+
 
 export const SettingsStack = StackNavigator({
     Settings: {
@@ -98,11 +113,11 @@ export const Root = StackNavigator({
     Settings:{
         screen : SettingsStack,
     },
-    AddContact:{
-        screen : AddContactStack,
-    },
+   
+    
 },    {
         mode:'modal',
         headerMode:'none',
+        
     }
 );

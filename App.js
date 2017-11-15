@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import {Root} from './app/config/router';
-import Feed from './app/screens/Feed';
+//import Feed from './app/screens/Feed';
 import Me from './app/screens/Me';
 import {
   Platform,

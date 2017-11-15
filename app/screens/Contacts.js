@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
-  ScrollView
+  ScrollView,StyleSheet,FlatList,MyItem
 } from 'react-native';
-import { List, ListItem, Button,ListView,FlatList } from 'react-native-elements';
+import ActionButton from 'react-native-action-button';
+import { List, ListItem, Button,ListView,Icon } from 'react-native-elements';
 import { users } from '../config/data';
 import { jubi } from '../config/data';
 
 import  firebase from '../config/firebase';
 
-class Feed extends Component {
+class Contacts extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -102,38 +103,28 @@ console.log('item' + name);
 //{ title: { name: 'fasdf', phone: 'dfasdf' }
   render() {
     return (
-      <ScrollView>
-          <View style={{flexDirection: 'row', flex: 1}}>
-                 
-            <Button
-              title="Get"
-              buttonStyle={{ marginTop: 20 }}
-              onPress={this.getContacts}
-            />
-          
-            
-            <Button
-              title="New"
-              buttonStyle={{ marginTop: 20 }}
-              onPress={this.handleAddContactPress}
-            />
-         
-        </View>
-        <List>
+      <View>
+                 <ScrollView>
+              
+                 <List containerStyle={{marginBottom: 10}}>
          
             {this.state.data.map((item) => (
-              <ListItem
+              <ListItem  
               key={item.name}
                 roundAvatar
+                
                 title={`${item.name} ${item.name}`}
                 subtitle={item.email}
                 onPress={() => this.onLearnMore(item)}
-               // avatar={{ uri: item.picture.thumbnail }}
+                avatar={{ uri: 'https://randomuser.me/api/portraits/thumb/men/29.jpg' }}
               />
             ))}
-
+    
     </List>
-     
+
+
+
+{/*
         <List>
           {users.map((user) => (
             <ListItem
@@ -146,11 +137,41 @@ console.log('item' + name);
             />
           ))}
         </List>
-        
+        */}    
+      
       </ScrollView>
+    
+
+      <ActionButton 
+              style={styles.actionButtonIcon}
+              buttonColor="rgba(231,76,60,1)"
+              name='check-circle'
+              type='MaterialIcons'
+              color='#517fa4'
+              //size={50}
+              //raised = {true}
+              onPress={this.handleAddContactPress}>
+               
+          
+        </ActionButton>    
+      </View>
+   
     );
   }
  
 }
+const styles = StyleSheet.create({
+  actionButtonIcon: {
+   // fontSize: 20,
+   // height: 22,
+    //color: 'white',
+  },
+  listStyle: {
+    fontSize: 30,
+    height: 22,
+    color: 'red',
+  },
+});
 
-export default Feed;
+
+export default Contacts;

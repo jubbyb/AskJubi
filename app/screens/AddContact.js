@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { ScrollView, Button } from 'react-native';
-import { Tile, List, ListItem, FormInput, FormLabel } from 'react-native-elements';
+import { ScrollView, View,Button } from 'react-native';
+import { Tile, List, ListItem, FormInput, FormLabel,Icon } from 'react-native-elements';
+import ActionButton from 'react-native-action-button';
 import { me } from '../config/data';
 import  firebase from '../config/firebase';
 
@@ -40,17 +41,28 @@ class AddContact extends Component {
  
 
     return (
+        <View>
+            <Button 
+   
+             
+              
+              name='check-circle'
+              type='MaterialIcons'
+              //color='#517fa4'
+              title='save'
+              //size={50}
+              //raised = {true}
+              onPress={this.addNewContact}>saveeee
+               
+          
+        </Button> 
       <ScrollView>
 
         
             
       
        
-        <Button 
-            title='save'
-            
-            onPress={this.addNewContact}
-        />
+        
         <FormLabel>Name</FormLabel>
         <FormInput 
             
@@ -101,8 +113,10 @@ class AddContact extends Component {
         />
         */}
 
-       
+
       </ScrollView>
+     
+      </View>
     );
   }
 }
