@@ -10,11 +10,24 @@ import {
   View
 } from 'react-native';
 
+//import React from 'react'
+//import { render } from 'react-dom'
+//import { createStore } from 'redux';
+//import { Provider } from 'react-redux';
+//import reducer from './app/reducers';
+
+//const store = createStore(reducer)
+
+
+
 
 export default class App extends Component<{}> {
   render() {
     return (
+      //setup redux provider 
+     // <Provider store={store}>
     <Root />
+   // </Provider>
     );
     
   }

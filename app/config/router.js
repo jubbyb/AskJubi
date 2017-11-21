@@ -1,6 +1,6 @@
 import React from 'react';
 import {TabNavigator,StackNavigator} from 'react-navigation';
-import {Icon} from 'react-native-elements';
+import {Icon,Button} from 'react-native-elements';
 
 
 import Contacts from '../screens/Contacts';
@@ -36,6 +36,7 @@ UserDetails:{
         screen: AddContact,
              navigationOptions:({ navigation }) => ({
                 title: 'Create Contact',
+                headerRight: <Button title="Save" />
                
             } ),
         
